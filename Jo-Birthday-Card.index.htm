@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Jo! 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffd6e8, #ffb3d9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 90%;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 20px; color: #fff; }
+    p { font-size: 1.2rem; line-height: 1.6; color: #fff; }
+    #cake { position: relative; margin: 20px auto; width: 120px; height: 120px; }
+    #cake-base { width: 120px; height: 80px; background: #ff99cc; border-radius: 0 0 20px 20px; position: absolute; bottom: 0; }
+    #candle { width: 20px; height: 40px; background: #fff; border-radius: 5px; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); }
+    #flame { width: 10px; height: 20px; background: orange; border-radius: 50%; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); animation: flicker 1s infinite; }
+    @keyframes flicker {
+      0%,100% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 0.7; }
+    }
+    .hidden { display: none; }
+    #message { margin-top: 20px; opacity: 0; transition: opacity 2s ease-in; }
+    .heart { color: #ff6b81; font-size: 2rem; }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #fff;
+      color: #ff66b2;
+      transition: transform 0.2s;
+    }
+    button:hover { transform: scale(1.1); }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+  <source src="iris.mp3" type="audio/mpeg">
+
+  <div class="card">
+    <h1>🎂 Happy Birthday Jo! 🎂</h1>
+    <div id="cake">
+      <div id="cake-base"></div>
+      <div id="candle"></div>
+      <div id="flame"></div>
+    </div>
+    <button id="blowButton">Blow the Candle!</button>
+    <div id="message" class="hidden">
+      <p>You're my favorite person in the whole world, and I'm so lucky to have you.<br>
+      You always make my heart feel soft and full of joy ✨</p>
+      <p>I hope your day overflows with love, laughter, and endless smiles.<br>
+      I pray for your good health and for amazing opportunities to come your way.</p>
+      <p>Keep being brave, kind, and loving,<br>
+      you inspire me every single day.</p>
+      <p>I will always be grateful for you, today and always.</p>
+      <p>Luv lots -Dia <span class="heart">💗💗</span></p>
+    </div>
+  </div>
+
+  <script>
+    const blowButton = document.getElementById('blowButton');
+    const flame = document.getElementById('flame');
+    const message = document.getElementById('message');
+
+    blowButton.addEventListener('click', () => {
+      flame.classList.add('hidden');
+      message.classList.remove('hidden');
+      setTimeout(() => {
+        message.style.opacity = 1;
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
