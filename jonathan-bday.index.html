@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Jonathan 🎂</title>
+
+<style>
+  body {
+    background: #fffafc;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff91a4;
+  }
+
+  #cake {
+    font-size: 5em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  #cake:hover {
+    transform: scale(1.1);
+  }
+
+  #message {
+    opacity: 0;
+    max-width: 90%;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #444;
+    transition: opacity 1.5s ease;
+    white-space: pre-line;
+  }
+
+  audio {
+    display: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 10px;
+    font-size: 0.8em;
+    color: #888;
+  }
+</style>
+</head>
+
+<body>
+  <h1>Happy Birthday, Jonathan 🎉</h1>
+
+  <div id="cake">🎂</div>
+
+  <p id="hint">Tap the cake to blow it 🎂💨</p>
+
+  <p id="message">
+Happiest Birthday to my soulmate Jo! Always remember that you’re my favorite person ever and i’m so lucky to have you! You always make my heart feel so soft hehe hope your day’s full of love and smiles. I pray for good health and for better opportunity coming in your life. Continue to be brave, kind and loving. I will always be grateful meeting you, but also excited to meet you in person too. luv lotsss 💗💗 
+  </p>
+
+  <audio id="bgm" loop autoplay>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/It's_time_for_adventure/Komiku_-_12_-_Inspiring.mp3" type="audio/mpeg">
+  </audio>
+
+  <footer>made with 💖 by Dia</footer>
+
+  <script>
+    const cake = document.getElementById('cake');
+    const message = document.getElementById('message');
+    const hint = document.getElementById('hint');
+    const bgm = document.getElementById('bgm');
+
+    cake.addEventListener('click', () => {
+      cake.textContent = "🕯️💨";
+      hint.textContent = "✨ make a wish... ✨";
+      setTimeout(() => {
+        cake.textContent = "🎉";
+        message.style.opacity = 1;
+        hint.style.display = "none";
+        bgm.play();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
